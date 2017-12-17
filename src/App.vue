@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <ul>
-      <li><router-link to="/home">Home</router-link></li>
-      <li><router-link to="/demo1">demo1</router-link></li>
-      <li><router-link to="/demo2">demo2</router-link></li>
-      <li><router-link to="/demo3">demo3</router-link></li>
-      <li><router-link to="/demo4">demo4</router-link></li>
-    </ul>
-    <router-view/>
+    <div class="munes">
+      <span><router-link to="/home">Home</router-link></span>
+      <span><router-link to="/demo1">demo1</router-link></span>
+      <span><router-link to="/demo2">demo2</router-link></span>
+      <span><router-link to="/demo3">demo3</router-link></span>
+      <span><router-link to="/demo4">demo4</router-link></span>
+    </div>
+    <hr>
+    <div class="dashborad">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -27,18 +30,25 @@ export default {
   margin-top: 60px;
 }
 
-ul {
-  left: 0;
+span {
+  padding: 20px;
+  font-size: 4rem;
 }
 
-ul li {
-  list-style: none;
-  float: left;
-  margin: 5px;
-  background-color: #eeeeee;
+a {
+  text-decoration-line: none;
 }
 
-ul li a{
-  text-decoration:none; 
+.router-link-active {
+  text-decoration-line: none;
+}
+
+.munes {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dashborad {
+  margin-top: 40px;
 }
 </style>
