@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">菜单2</a></li>
-      <li><a href="#">菜单3</a></li>
-      <li><a href="#">菜单4</a></li>
-      <li><a href="#">菜单5</a></li>
+      <li><router-link to="/home">Home</router-link></li>
+      <li><router-link to="/demo1">demo1</router-link></li>
+      <li><router-link to="/demo2">demo2</router-link></li>
+      <li><router-link to="/demo3">demo3</router-link></li>
+      <li><router-link to="/demo4">demo4</router-link></li>
     </ul>
     <router-view/>
   </div>
@@ -13,8 +13,8 @@
 
 <script>
 export default {
-  name: "app"
-};
+  name: 'app'
+}
 </script>
 
 <style>
