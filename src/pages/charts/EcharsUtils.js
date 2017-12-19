@@ -2,9 +2,9 @@ import echarts from 'echarts'
 
 class EchartsUtils {
 
-    drawColumnChart() {
-        this.chartColumn = echarts.init(document.getElementById('chartColumn'));
-        this.chartColumn.setOption({
+    drawColumnChart(chartColumnDom) {
+        const chartColumn = echarts.init(chartColumnDom);
+        chartColumn.setOption({
             title: { text: 'Column Chart' },
             tooltip: {},
             xAxis: {
@@ -19,9 +19,9 @@ class EchartsUtils {
         });
     };
 
-    drawBarChart() {
-        this.chartBar = echarts.init(document.getElementById('chartBar'));
-        this.chartBar.setOption({
+    drawBarChart(charBarDom) {
+        const chartBar = echarts.init(charBarDom);
+        chartBar.setOption({
             title: {
                 text: 'Bar Chart',
                 subtext: '数据来自网络'
@@ -64,9 +64,9 @@ class EchartsUtils {
         });
     };
 
-    drawLineChart() {
-        this.chartLine = echarts.init(document.getElementById('chartLine'));
-        this.chartLine.setOption({
+    drawLineChart(chartLineDom) {
+        const chartLine = echarts.init(chartLineDom);
+        chartLine.setOption({
             title: {
                 text: 'Line Chart'
             },
@@ -113,9 +113,9 @@ class EchartsUtils {
         });
     };
 
-    drawPieChart() {
-        this.chartPie = echarts.init(document.getElementById('chartPie'));
-        this.chartPie.setOption({
+    drawPieChart(chartPieDom) {
+        const chartPie = echarts.init(chartPieDom);
+        chartPie.setOption({
             title: {
                 text: 'Pie Chart',
                 subtext: '纯属虚构',

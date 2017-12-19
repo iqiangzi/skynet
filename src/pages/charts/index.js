@@ -1,33 +1,40 @@
-import  EchartsUtils from "./EcharsUtils";
+import EchartsUtils from "./EcharsUtils";
 
 export default {
-     // 自定义的一些初始化数据 与 页面上的属性 互相绑定
+    // 自定义的一些初始化数据 与 页面上的属性 互相绑定
     data() {
-        return { }
+        return {}
     },
     // 放初始化的东西, this只带当前实例， 在vue 实例被创建的之时候执行
-    created(){
+    created() {
         this.echartsUtils = new EchartsUtils();
     },
     // 自定义的一些方法 与 页面事件 互相绑定
     methods: {
         drawCharts() {
-            this.echartsUtils.drawColumnChart();
-            this.echartsUtils.drawBarChart();
-            this.echartsUtils.drawLineChart();
-            this.echartsUtils.drawPieChart();
+            const chartColumnDom = document.getElementById('chartColumn');
+            this.echartsUtils.drawColumnChart(chartColumnDom);
+
+            const charBarDom = document.getElementById('chartBar');
+            this.echartsUtils.drawBarChart(charBarDom);
+
+            const chartLineDom = document.getElementById('chartLine');
+            this.echartsUtils.drawLineChart(chartLineDom);
+
+            const chartPieDom = document.getElementById('chartPie')
+            this.echartsUtils.drawPieChart(chartPieDom);
         }
     },
-    // el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
-    mounted () {
+    // el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。此时 HTML 已经编译完成
+    mounted() {
         this.drawCharts();
     },
     // 数据更改导致的虚拟 DOM 重新渲染和打补丁
-    updated () {
+    updated() {
         this.drawCharts();
     },
     // 在实例被销毁时调用
-    destroyed(){
+    destroyed() {
         console.log("echarts 已经被销毁");
     }
 }
