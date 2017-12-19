@@ -9,6 +9,7 @@ import NotFoundComponent from "./pages/404";
 Vue.use(VueRouter)
 
 const routes = [
+  {path: '/', component: Home, name:'home'},
   {path: '/home', component: Home, name:'home'},
   {path: '/details/:id', component: Details, name: 'details'},
   {path: '/charts', component: Charts, name:'charts'},
