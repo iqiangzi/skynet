@@ -1,17 +1,16 @@
 <template>
   <div class="wrap">
-    <div class="logo"><i>点击右侧显示计数{{count}}</i></div>
-    <div class="tabs">
+    <div class="logo" v-if="showTitle"><i>点击右侧显示计数{{count}}</i></div>
+    <div>
       <ul>
-    	<li class="active"><img src="../assets/list.png"></li>
-   
+    	  <li class="active"><img src="../assets/list.png" @click="activeListImg()"></li>
       </ul>
     </div>
     <div class="clear"></div>
   	<div class="lists">
   	  <ul>
-  	  	<li :class="{active : url === '/'}"><img src="../assets/home.png"><router-link :to="{name: 'home'}">home</router-link></li>
-  	  	<li :class="{active : url === '/charts'}"><img src="../assets/charts.png"><router-link :to="{name: 'charts'}">charts</router-link></li>
+  	  	<li :class="{active : url === '/'}"><router-link :to="{name: 'home'}"><img src="../assets/home.png"><span v-if="showTitle">home</span></router-link></li>
+  	  	<li :class="{active : url === '/charts'}"><router-link :to="{name: 'charts'}"><img src="../assets/charts.png"><span v-if="showTitle">charts</span></router-link></li>
       </ul>
   	</div>
   </div>
@@ -22,7 +21,10 @@ import { mapState } from 'vuex'
 
 export default {
   data() {
-    return {url: ''}
+    return {
+      url: '',
+      showTitle: true
+    }
   },
   created() {
     this.getUrl()
@@ -30,7 +32,11 @@ export default {
   methods: {
   	getUrl() {
   	  this.url = this.$route.path
-  	}
+    },
+    activeListImg: function (){
+      this.showTitle = !this.showTitle;
+      this.$emit('changeSize', this.showTitle);
+    }
   },
   computed: {
   	...mapState(['count']),
@@ -72,11 +78,9 @@ export default {
   }
   .clear{clear: both;}
   .lists{
-  	width: 200px;
   	padding: 20px 0px;
   }
   .lists li{
-  	width: 200px;
   	height: 35px;
   	line-height: 35px;
   }
