@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="wrap-left">
-      <my-home></my-home>
+      <my-menu></my-menu>
     </div>
     <div class="wrap-right">
       <div class="header">
@@ -20,14 +20,14 @@
 <script>
 import MyHeader from './components/header'
 import MyFooter from './components/footer'
-import MyHome from './components/home'
+import myMenu from './components/menu'
 
 export default {
   name: 'app',
   components: {
     MyHeader,
     MyFooter,
-    MyHome
+    myMenu
   }
 }
 </script>
