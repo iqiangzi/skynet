@@ -1,0 +1,8 @@
+.chart-container {
+    width: 100%;
+    overflow: scroll
+}
+
+.chart-container div {
+    float: left;
+}
