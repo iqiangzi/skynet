@@ -1,9 +1,9 @@
 <template>
   <div class="wrap">
-    <div class="wrap-left">
-      <my-menu></my-menu>
+    <div v-bind:class="isBig ? 'wrap-left':'wrap-left-sm'">
+      <my-menu @changeSize="changeSize"></my-menu>
     </div>
-    <div class="wrap-right">
+    <div  v-bind:class="isBig ? 'wrap-right':'wrap-right-lg'">
       <div class="header">
         <my-header></my-header>
       </div>
@@ -28,6 +28,16 @@ export default {
     MyHeader,
     MyFooter,
     myMenu
+  },
+  data() {
+    return {
+      isBig : true
+    }
+  },
+  methods: {
+    changeSize: function (isBig){
+      this.isBig = isBig;
+    }
   }
 }
 </script>
@@ -38,7 +48,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.wrap{
+.wrap {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -48,10 +58,22 @@ export default {
   width: 200px;
   height: calc(100vh - 40px);
 }
+.wrap-left-sm {
+  float: left;
+  width: 60px;
+  height: calc(100vh - 40px);
+}
+
 .wrap-right{
    float: left;
   width: calc(100vw - 200px);
   background: #fff;
+}
+.wrap-right-lg{
+  float: left;
+  width: calc(100vw - 60px);
+  background: #fff;
+  height: calc(100vh - 40px);
 }
 .wrap-right>div{
   width: 100%;
@@ -64,6 +86,7 @@ export default {
 }
 .wrap-right .footer{
   height: 40px;
+  bottom: 0;
   background: #232323;
 }
 </style>
