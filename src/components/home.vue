@@ -4,9 +4,7 @@
     <div class="tabs">
       <ul>
     	<li class="active"><img src="../assets/list.png"></li>
-    	<li><img src="../assets/charts.png"></li>
-    	<li><img src="../assets/location.png"></li>
-    	<li><img src="../assets/lists-1.png"></li>
+   
       </ul>
     </div>
     <div class="clear"></div>
