@@ -2,7 +2,7 @@
   <div class="wrap">
     <div>
       <ul v-for="item in datas">
-    	<li><router-link :to="{name: 'details', params: {id : item.cid}}">{{item.title}}</router-link></li>
+    	<li><router-link :to="{name: 'details', params: {id : item.id}}">{{item.title}}</router-link></li>
       </ul>
     </div>
     <div class="increment" @click="increment">点击查看左侧效果</div>
@@ -15,7 +15,8 @@ import { mapMutations } from 'vuex'
 
 export default {
   data() {
-  	return {datas: []}
+  	return {datas:[]
+}
   },
   created() {
   	this.$http.get("http://localhost/skynet/lists").then(data => {
