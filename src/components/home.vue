@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="logo"><p>点击右侧显示计数{{count}}</p></div>
+    <div class="logo"><i>点击右侧显示计数{{count}}</i></div>
     <div class="tabs">
       <ul>
     	<li class="active"><img src="../assets/list.png"></li>
