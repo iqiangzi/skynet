@@ -13,7 +13,7 @@ const routes = [
   {path: '/home', component: Home, name:'home'},
   {path: '/details/:id', component: Details, name: 'details'},
   {path: '/charts', component: Charts, name:'charts'},
-  {path: '*', component: NotFoundComponent}
+  {path: '*', component: NotFoundComponent,name:'Page Not Found'}
 ]
 
 const router = new VueRouter({
