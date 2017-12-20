@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-  	count: 0
+    count: 0
   },
   mutations,
   actions,
@@ -16,7 +16,7 @@ const store = new Vuex.Store({
 
   },
   modules: {
-  	lists
+    lists
   }
 })
 
