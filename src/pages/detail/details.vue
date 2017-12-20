@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div>
-      <ul v-for="item in datas">
+      <ul v-bind:key="item" v-for="item in datas">
         <li>
           <div>
             <h4>{{item.title}}<small>{{item.date}}</small><small>{{item.author}}</small></h4>
