@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "commonjs": true,
-        "es6": true
+        "es6": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -29,6 +30,8 @@ module.exports = {
         "no-extra-semi": 2,
         //  禁止不必要的括号 //(a * b) + c;//报错
         "no-extra-parens": 0,
+        // 允许使用 console
+        'no-console': 0,
 
         /**
          *  代码风格
