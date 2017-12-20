@@ -5,9 +5,9 @@ import Home from './pages/home/home'
 import Charts from './pages/charts/charts'
 import Details from './pages/detail/details'
 import NotFoundComponent from "./pages/404";
-
 Vue.use(VueRouter)
 
+/*Routing controller*/
 const routes = [
   {path: '/', component: Home, name:'home'},
   {path: '/home', component: Home, name:'home'},
