@@ -1,3 +1,4 @@
+/* eslint-disable */  //该文件禁用  eslint检测
 // https://github.com/shelljs/shelljs
 require('./check-versions')()
 require('shelljs/global')
