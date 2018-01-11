@@ -4,7 +4,9 @@ import Index from '@/components/index'
 
 Vue.use(Router)
 
-const route = [{path: '/', name: 'index', component: Index}]
+const routes = [
+{path: '/', name: 'index', component: Index}
+]
 export default new Router({
-  routes: route
+  routes: routes
 })
